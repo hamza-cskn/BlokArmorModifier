@@ -9,7 +9,7 @@ import static mc.obliviate.blokarmormodifier.listeners.DamageListener.ARMOR_POIN
 
 public class ArmorCalculator {
 
-	public static ArmorScore calculateArmorScore(final ItemStack[] armorContents) {
+	private static ArmorScore calculateArmorScore(final ItemStack[] armorContents) {
 		double totalArmorPoint = 0;
 		int totalEPF = 0;
 
@@ -25,15 +25,15 @@ public class ArmorCalculator {
 		return new ArmorScore(totalArmorPoint, totalEPF);
 	}
 
-	public static double calculateArmorReduction(final double point, final double baseDamage) {
+	private static double calculateArmorReduction(final double point, final double baseDamage) {
 		return -((point * 0.04) * baseDamage);
 	}
 
-	public static double calculateMinimumMagicReduction(final double point, final int epf, final double baseDamage) {
+	private static double calculateMinimumMagicReduction(final double point, final int epf, final double baseDamage) {
 		return -(((1 - point * 0.04) * epf * 4 * 0.005) * baseDamage);
 	}
 
-	public static double randomizeMagicReduction(final double minimumMagicReduction) {
+	private static double randomizeMagicReduction(final double minimumMagicReduction) {
 		return minimumMagicReduction + ((minimumMagicReduction * 2) - minimumMagicReduction) * new Random().nextDouble();
 	}
 
