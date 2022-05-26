@@ -1,0 +1,7 @@
+name: BlokArmorModifier
+main: mc.obliviate.blokarmormodifier.BlokArmorModifier
+author: Mr_Obliviate
+description: Armor point, damage calculator and modifier plugin.
+version: 2.0.0
+commands:
+  bam:
